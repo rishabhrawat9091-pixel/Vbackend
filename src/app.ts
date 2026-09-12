@@ -41,7 +41,9 @@ app.use("/api/clients", clientRouter);
 app.use("/api/activity", activityRouter);
 app.use("/api/notifications", notificationRouter);
 app.use("/api/dashboard", dashboardRouter);
-
+app.use("/", (_req: Request, _res: Response) => {
+  _res.send("Hello World");
+})
 // 404 Handler
 app.use((_req: Request, res: Response) => {
   res.status(404).json({
